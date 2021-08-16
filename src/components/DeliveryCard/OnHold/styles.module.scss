@@ -1,0 +1,113 @@
+.deliveryCardContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 95vw;
+
+    padding: 1.2rem 1.2rem;
+
+    background: #fff;
+
+    border-radius: 5px;
+
+    color: var(--gray-500);
+    font-size: 0.75rem;
+
+    margin-bottom: 0.625rem;
+
+    box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
+
+    section {
+       margin-bottom: 0.875rem;
+
+       .titleDelivery {
+           margin-bottom: 0.2rem;
+       }
+
+        h3 {
+            color: var(--orange-700);
+            font-size: 0.875rem;
+
+            strong {
+                margin-left: 0.3rem;
+                font-weight: 500;
+                font-size: 0.75rem;
+            }
+       }
+
+       &:first-child{
+           margin-bottom: 0.2rem;
+       }
+    }
+
+    .clientContainer {
+        margin-bottom: 1rem;
+
+        .profile {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+    
+            .client{
+                margin-left: 0.5rem;
+
+                .currentRate {
+                    color: var(--orange-700);
+                    font-size: 0.875rem;
+                    
+                    span {
+                        margin-left: 0.5rem;
+
+                        font-size: 0.875rem;
+                    }
+                }
+            }
+        }
+    }
+    
+    .addressContainer {
+        margin-top: 0.875rem;
+
+        span {
+            font-size: 0.75rem;
+        }
+    }
+    
+    .line {
+        width: 100%;
+        height: 1px;
+        background-color: var(--gray-100);
+    }
+    
+    .actionButtonsContainer {
+        display: flex;
+        align-items: flex-end;
+        flex-direction: row;
+    
+        button {
+            padding: 1rem;
+        }
+    
+        .refuseBtn {
+            width: 100%;
+    
+            border-radius: 5px;
+    
+            color: var(--black);
+            background: none;
+    
+            font-weight: 500;
+        }
+    
+        .acceptBtn {
+            margin-left: 0.2rem;
+            width: 200%;
+    
+            border-radius: 5px;
+    
+            font-weight: 500;
+            color: var(--green-600);
+            background: var(--green-100);
+        }
+    }
+}
