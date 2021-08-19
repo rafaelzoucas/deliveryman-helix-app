@@ -22,11 +22,11 @@ export default function Issue({onClose = () => {}}) {
             </section>
 
             <section className={styles.whatsWrong}>
-                <h3 className={styles.titleDelivery}>
+                {/* <h3 className={styles.titleDelivery}>
                     <FontAwesomeIcon icon="exclamation-triangle" />
                     <strong>O que houve de errado?</strong>
-                </h3>
-                <div className={styles.solveOption}>
+                </h3> */}
+                {/* <div className={styles.solveOption}>
                     <FontAwesomeIcon icon="user-times" />
                     <p>Cliente não está atendendo</p>
                 </div>
@@ -44,19 +44,27 @@ export default function Issue({onClose = () => {}}) {
                         <p>Pedido incompleto</p>
                     </div>
                     <input type="text" placeholder="Digite o que está faltando" />
-                </div>
-                <div className={styles.solveOptionInput}>
+                </div> */}
+                {/* <div className={styles.solveOptionInput}>
                     <div>
                         <FontAwesomeIcon icon="question-circle" />
                         <p>Outro problema</p>
                     </div>
                     <input type="text" placeholder="Digite em poucas palavras o ocorrido" />
+                </div> */}
+                <div className={styles.solveOptionInput}>
+                    <div>
+                        <FontAwesomeIcon icon="ban" />
+                        <p>Desistir da entrega</p>
+                    </div>
+                    <input type="text" placeholder="Por qual motivo?" />
                 </div>
             </section>
 
             <div className={styles.issueButtonsContainer}>
                 <button onClick={onClose} className={styles.cancelIssueBtn}>Cancelar</button>
-                <button className={styles.requestIssueBtn}>Solicitar imprevisto</button>
+                {/* <button className={styles.requestIssueBtn}>Solicitar imprevisto</button> */}
+                <button className={styles.requestIssueBtn}>Quero desistir dessa entrega</button>
                 {/* <button className={styles.disabledBtn}>Selecione uma solução para continuar</button> */}
             </div>
         </div>
