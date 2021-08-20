@@ -9,6 +9,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Issue from '../../Modals/Issue'
+import Link from 'next/link'
 
 library.add(fas)
 
@@ -66,7 +67,7 @@ export default function InProgress() {
                         />
                     </section>
                     
-                    <section className={styles.statusContainer} style={{display: `${displayDeliveryCardItems}`}}>
+                    {/* <section className={styles.statusContainer} style={{display: `${displayDeliveryCardItems}`}}>
                         <div className={styles.statusBar}>
                             <div className={styles.waitingDeliverymanStatus}>
                                 <div className={styles.waitingDeliverymanCurrentStatus}></div>
@@ -80,17 +81,17 @@ export default function InProgress() {
                         <p>
                             Você está {'STATUS'}...
                             
-                            {/* 
+                            
                                 -se deslocando até o endereço de coleta
                                 -coletando o pedido 
                                 -confirmando forma de pagamento
                                 -a caminho do endereço de entrega
                                 -retornando ao endereço de coleta 
-                            */}
+                           
                         </p>
         
                         <span>30 minutos e 57 segundos</span>
-                    </section>
+                    </section> */}
 
                     <section 
                         className={styles.clientContainer} 
@@ -118,7 +119,13 @@ export default function InProgress() {
                             <FontAwesomeIcon icon="map-marker" />
                             <strong>Endereço de coleta</strong>
                         </h3>
-                            <p>Rua Do Endereço De Coleta, 345</p>
+                        
+                        <Link href="https://www.google.com/maps/place/Supermercados+Avenida+Max/@-22.659259,-50.4242346,14.77z/data=!4m13!1m7!3m6!1s0x94953996f3aa8219:0x2e7a343fe4161010!2sR.+Santa+Cruz,+801+-+Centro,+Assis+-+SP,+19800-320!3b1!8m2!3d-22.6683807!4d-50.4132049!3m4!1s0x94953bd855437567:0x2807c2d59b6a69bb!8m2!3d-22.6487649!4d-50.4336399">
+                            <div>
+                                <p>Rua Do Endereço De Coleta, 345 </p>
+                                    <FontAwesomeIcon icon="location-arrow" className={styles.mapsLink} />
+                            </div>
+                        </Link>
         
                         <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
         
@@ -139,7 +146,13 @@ export default function InProgress() {
                             <FontAwesomeIcon icon="map-marker-alt" />
                             <strong>Endereço da entrega</strong>
                         </h3>
-                            <p>Rua Do Endereço Da Entrega, 543</p>
+
+                        <Link href="https://www.google.com/maps/place/Cafeteria+Madalena/@-22.6666462,-50.4171918,16.06z/data=!4m13!1m7!3m6!1s0x94953996f3aa8219:0x2e7a343fe4161010!2sR.+Santa+Cruz,+801+-+Centro,+Assis+-+SP,+19800-320!3b1!8m2!3d-22.6683807!4d-50.4132049!3m4!1s0x0:0x5c0b6e5f19cb2b45!8m2!3d-22.6622735!4d-50.4139667">
+                            <div>
+                                <p>Rua Do Endereço Da Entrega, 345 </p>
+                                <FontAwesomeIcon icon="location-arrow" className={styles.mapsLink} />
+                            </div>
+                        </Link>
         
                         <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
         
@@ -157,9 +170,17 @@ export default function InProgress() {
                     <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
                         <h3 className={styles.titleDelivery}>
                             <FontAwesomeIcon icon="coins" />
-                            <strong>Forma de pagamento</strong>
+                            <strong>Forma de cobrança</strong>
                         </h3>
                         <p>Cartão</p>
+                    </section>
+
+                    <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+                        <h3 className={styles.titleDelivery}>
+                            <FontAwesomeIcon icon="dollar-sign" />
+                            <strong>Valor pela corrida</strong>
+                        </h3>
+                        <p>R$ 9,75</p>
                     </section>
         
                     

@@ -186,6 +186,16 @@
         span {
             font-size: 0.75rem;
         }
+
+        div {
+            display: flex;
+            justify-content: space-between;
+
+            .mapsLink {
+                color: var(--orange-700);
+                font-size: 1rem;
+            }
+        }
     }
 
     .actionButtonsContainer {
