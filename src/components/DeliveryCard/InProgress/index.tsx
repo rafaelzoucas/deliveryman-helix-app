@@ -182,8 +182,6 @@ export default function InProgress() {
                         </h3>
                         <p>R$ 9,75</p>
                     </section>
-        
-                    
 
                     <div className={styles.actionButtonsContainer}>        
                         <div className={styles.progressBtns}>
