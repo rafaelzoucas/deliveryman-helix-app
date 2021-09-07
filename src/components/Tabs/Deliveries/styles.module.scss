@@ -1,7 +1,7 @@
 .deliveriesPage {
     width: 100vw;
     
-    overflow-y: hidden;
+    overflow: hidden;
     
     display: flex;
     flex-direction: column;
@@ -86,10 +86,40 @@
 
         p {
             margin-top: 2rem;
+            margin-bottom: 2rem;
+
             font-weight: 400;
             font-size: 1.12rem;
+
             width: 70%;
             text-align: center;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            white-space: nowrap;
+            
+            padding: 0.5rem;
+
+            border-radius: 10px;
+
+            gap: 0.5rem;
+        }
+
+        .issueBtn {
+            width: 70%;
+            max-width: 415px;
+
+            padding: 0 1rem;
+            font-weight: 600;
+            height: 3.5rem;
+
+            color: var(--yellow-900);
+
+            background-color: var(--yellow-100);
         }
     }
 }

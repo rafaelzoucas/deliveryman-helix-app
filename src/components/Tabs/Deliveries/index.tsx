@@ -7,6 +7,7 @@ import Finished from '../../DeliveryCard/Finished'
 import { useState } from 'react'
 import Canceled from '../../DeliveryCard/Canceled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 
 export default function Home() {
   const [currentTab, setCurretTab] = useState('inProgress')
@@ -51,8 +52,8 @@ export default function Home() {
         
         <div className={styles.deliveriesContainer}>
           <section style={{display: `${displayOnHoldDeliveries}`}}>
-            <OnHold />
-            <OnHold />
+            {/* <OnHold />
+            <OnHold /> */}
 
             {/* ------- ativar quando não houver entregas -------- */}
             {/* <div className={styles.theresNoDelivery}>
@@ -77,6 +78,21 @@ export default function Home() {
                 Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
               </p>
             </div> */}
+
+            {/* -------- ativar quando saldo estiver insuficiente ---------- */}
+            <div className={styles.theresNoDelivery}>
+              <FontAwesomeIcon icon="ban" />
+              <p>
+                A sua conta está bloqueada, entre em contato conosco. 
+              </p> 
+              <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                  <button className={styles.issueBtn}>
+                      <FontAwesomeIcon icon="comment" />
+
+                      WhatsApp
+                  </button>
+              </Link>
+            </div>
           </section>
 
           <section style={{display: `${displayInProgressDeliveries}`}}>
@@ -113,6 +129,21 @@ export default function Home() {
                 Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
               </p>
             </div> */}
+
+            {/* -------- ativar quando saldo estiver insuficiente ---------- */}
+            {/* <div className={styles.theresNoDelivery}>
+              <FontAwesomeIcon icon="ban" />
+              <p>
+                A sua conta está bloqueada, entre em contato conosco. 
+              </p> 
+              <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                  <button className={styles.issueBtn}>
+                      <FontAwesomeIcon icon="comment" />
+
+                      WhatsApp
+                  </button>
+              </Link>
+            </div> */}
           </section>
           <section style={{display: `${displayFinishedDeliveries}`}}>
             <Finished />
@@ -133,6 +164,21 @@ export default function Home() {
               <p>
                 Estamos analisando o seu cadastro, em breve entraremos em contato para ativá-lo.
               </p>
+            </div> */}
+
+            {/* -------- ativar quando saldo estiver insuficiente ---------- */}
+            {/* <div className={styles.theresNoDelivery}>
+              <FontAwesomeIcon icon="ban" />
+              <p>
+                A sua conta está bloqueada, entre em contato conosco. 
+              </p> 
+              <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                  <button className={styles.issueBtn}>
+                      <FontAwesomeIcon icon="comment" />
+
+                      WhatsApp
+                  </button>
+              </Link>
             </div> */}
           </section>
         </div>
