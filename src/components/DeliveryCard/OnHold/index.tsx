@@ -32,7 +32,7 @@ export default function OnHold() {
 
                 <section className={styles.addressContainer} >
                     <h3 className={styles.titleDelivery}>
-                        <FontAwesomeIcon icon="map-marker-alt" />
+                        <FontAwesomeIcon icon="map-marker" />
                         <strong>Endereço de coleta</strong>
                     </h3>
                         <p>Rua Do Endereço Da Coleta, 345</p>
@@ -81,9 +81,15 @@ export default function OnHold() {
                     <p>R$ 5,00</p>
                 </section>
 
-                <div className={styles.actionButtonsContainer}>
-                    <button className={styles.refuseBtn}>Recusar</button>
-                    <button className={styles.acceptBtn}>59s Aceitar</button>
+                <div className={styles.btnsContainer}>
+                    <button className={styles.refuseBtn}>
+                        <FontAwesomeIcon icon="times" />
+                        Recusar
+                    </button>
+                    <button className={styles.acceptBtn}>
+                        <FontAwesomeIcon icon="check" />
+                        59s Aceitar
+                    </button>
                 </div>
             </div>
         </>
