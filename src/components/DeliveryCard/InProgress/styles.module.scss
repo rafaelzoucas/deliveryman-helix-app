@@ -17,8 +17,10 @@
 
     box-shadow: 0 3px 45px rgba(0, 0, 0, 0.05);
 
+    gap: 0.875rem;
+
     section {
-       margin-bottom: 0.875rem;
+    //    margin-bottom: 0.875rem;
 
        .titleDelivery {
            margin-bottom: 0.2rem;
@@ -44,26 +46,36 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: initial;
-
-        .dateTimeId {
+        
+        gap: 0.25rem;
+        
+        .profile {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.25rem;
+            margin-right: 0.25rem;
 
-            .dateTime {
-                font-size: 0.75rem;
-
-                margin-bottom: 0.625rem;
-            }
-
-            .idDelivery {
-                font-size: 0.875rem;
-                
-                strong {
-                    font-size: 0.875rem;
-                }
+            white-space: nowrap;
+            
+            span {
+                max-width: 250px;
+                // width: 125px;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            gap: 0.5rem;
+
+        }
+
 
         button{
             background-color: var(--orange-100);
@@ -98,86 +110,73 @@
         }
     }
 
-    .profile {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-
-        .info {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-
-            .client{
-                margin-left: 0.5rem;
-
-                .currentRate {
-                    color: var(--orange-700);
-                    font-size: 0.875rem;
-                    
-                    span {
-                        margin-left: 0.25rem;
-
-                        font-size: 0.875rem;
-                    }
-                }
-            }
-        }
-
-        .arrow {
-            color: var(--orange-700);
-        }
-    }
-
     .statusContainer {
         display: flex;
-        flex-direction: column;
-
-        p {
-            font-weight: 500;
-            font-size: 0.75rem;
-        }
-
-        span {
-            font-size: 0.75rem;
-        }
-
-        .statusBar{
-            margin: 0.5rem 0 0.5rem 0;
+        flex-direction: row;
+        align-items: initial;
         
+        gap: 0.25rem;
+
+        .label {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        
-        .waitingDeliverymanStatus{
-            width: 24%;
-            height: 0.3rem;
-        
-            background: var(--gray-100);
-            
-            .waitingDeliverymanCurrentStatus{
-                width: 100%;
-                height: 0.3rem;
-            
-                background: var(--green-500);
-            }
+            align-items: center;
 
+            padding: 0.75rem 0.5rem;
+            
+            height: 1rem;
+            
+            border-radius: 2rem;
+            
+            font-size: 0.625rem;
+
+            gap: 0.3rem;
+
+            // max-width: 70px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            
+
+            span {
+                font-size: 0.625rem;
+                font-weight: 500;
+            } 
         }
         
-        .deliveryInProgressStatus{
-            width: 74%;
-            height: 0.3rem;
-        
-            background: var(--gray-100);
-            
-            .deliveryInProgressCurrentStatus{
-                width: 60%;
-                height: 0.3rem;
-            
-                background: var(--green-500);
+        .loading {
+            animation: charge 1.25s infinite;
+        }
+
+        @keyframes charge {
+            from{
+                transform: rotate(0deg);
+            }to{
+                transform: rotate(360deg);
             }
+        }
+
+        .labelSuccess {
+            background: var(--green-100);
+
+            color: var(--green-700);
+        }
+
+        .labelIssue {
+            background: var(--yellow-100);
+
+            color: var(--black);
+        }
+
+        .labelDanger {
+            background: var(--red-100);
+
+            color: var(--red-700);
+        }
+
+        .labelTime {
+            background: var(--gray-100);
+
+            color: var(--gray-600);
         }
     }
 
@@ -198,74 +197,69 @@
         }
     }
 
-    .actionButtonsContainer {
+    .btnsContainer {
         display: flex;
-        flex-direction: column;
+        align-items: flex-end;
+        flex-direction: row;
 
-        .progressBtns {
+        gap: 0.5rem;
+
+        button {
             display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+
+            white-space: nowrap;
             
-            .issueBtn {
-                width: 100%;
+            padding: 0.5rem;
 
-                padding: 1rem ;
+            border-radius: 10px;
 
-                border-radius: 5px;
+            gap: 0.5rem;
+        }
+        
+        .nextStepBtn {
+            width: 100%;
+            
+            height: 3.5rem;
 
-                color: var(--gray-600);
-                background: var(--yellow-100);
+            font-weight: 600;
 
-                font-weight: 500;
-            }
+            color: var(--green-700);
 
-            .nextStepBtn {
-                width: 200%;
+            background-color: var(--green-100);
+        }
 
-                padding: 1rem ;
+        .issueBtn {
+            width: 50%;
 
-                border-radius: 5px;
+            padding: 0 1rem;
+            font-weight: 600;
+            height: 3.5rem;
 
-                color: var(--green-600);
-                background: var(--green-100);
+            color: var(--yellow-900);
 
-                font-weight: 500;
+            background-color: var(--yellow-100);
+        }
+        
+        .shuffle {
+            font-weight: 600;
 
-                margin-left: 0.5rem;
-            }
+            color: var(--orange-700);
 
-            .issueRequestBtn {
-                width: 200%;
-                margin-left: 0.5rem;
-                border-radius: 10rem;
+            background-color: var(--orange-100);
+        }
 
-                background: var(--red-300);
+        .issueRequestBtn {
+            margin-left: 0.2rem;
+            width: 150%;
+            height: 3rem;
 
-                color: #fff;
+            border-radius: 10rem;
 
-                padding: 1rem;
-
-                span {
-                    margin-left: 0.5rem;
-                    font-size: 0.75rem;
-                }
-            }
-
-            .issueRequestBtnViewed {
-                border-radius: 10rem;
-
-                background: var(--gray-200);
-
-                color: var(--gray-600);
-
-                padding: 1rem;
-
-                span {
-                    margin-left: 0.5rem;
-                    font-size: 0.75rem;
-                }
-            }
+            font-weight: 500;
+            color: var(--red-700);
+            background: var(--red-100);
         }
     }
 

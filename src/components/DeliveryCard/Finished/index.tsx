@@ -26,68 +26,58 @@ export default function Finished() {
 
     return (
         <div className={styles.deliveryCardContainer}>
-            <section id="header" className={styles.headerContainer} onClick={showHideDeliveryCard}>
-                <div className={styles.dateTimeId}>
-                    <span className={styles.dateTime}>Hoje - 14:53</span>
+            <section className={styles.headerContainer} onClick={showHideDeliveryCard}>
+                        
+                        <div>
 
-                    <span id="idDelivery" className={`${styles.titleDelivery} ${styles.idDelivery}`}>
-                        <FontAwesomeIcon icon="hashtag" />
-                        <strong>1973</strong>
-                    </span>
+                            <div className={styles.statusContainer}>
+                                {/* <div className={`${styles.label} ${styles.labelTime}`}>
+                                    <FontAwesomeIcon icon="clock" />
+                                    <span>{'14:23'}</span>
+                                </div> */}
 
-                </div>
+                                <div className={`${styles.label} ${styles.labelSuccess}`}>
+                                    <FontAwesomeIcon icon="check" />
+                                    <span>{'Finalizada com sucesso'}</span>
+                                </div>
 
-                <FontAwesomeIcon 
-                    icon="chevron-down" 
-                    className={`${isDeliveryCardOpened ? (
-                        `${styles.showDeliveryCard}`
-                    ) : (
-                        `${styles.hideDeliveryCard}`
-                    )}`}
-                />
-            </section>
+                                <div className={`${styles.label} ${styles.labelTime}`}>
+                                    <FontAwesomeIcon icon="hourglass-half"/>
 
-            <section id="status" className={styles.statusContainer}>
-                <div className={styles.labelStatusSuccess}>
-                    <FontAwesomeIcon icon="check" />
-                    <span>{'Realizada com sucesso'}</span>
-                </div>
-                {/* <div className={styles.labelStatusIssue}>
-                    <FontAwesomeIcon icon="exclamation-triangle" />
-                    <span>{'Realizada com imprevisto'}</span>
-                </div> */}
-                <div className={styles.labelTime}>
-                    <FontAwesomeIcon icon="clock" />
-                    <span>{'36 minutos'}</span>
-                </div>
-            </section>
-
-            <section 
-                className={styles.clientContainer} 
-                style={{display: `${displayDeliveryCardItems}`}}
-            >
-                <div className={styles.profile}>
-                    <div className={styles.info}>
-                        <Image 
-                            width={28} 
-                            height={28} 
-                            src="/img/icons/profile-user.svg"
-                            alt="Profile"
-                        />
-                        <div className={styles.client}>
-                            <span>
-                                Estabelecimento
-                            </span>
+                                    <span>{'00:55'}</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </section>
+                        <FontAwesomeIcon 
+                            icon="chevron-down" 
+                            className={`${isDeliveryCardOpened ? (
+                                `${styles.showDeliveryCard}`
+                            ) : (
+                                `${styles.hideDeliveryCard}`
+                            )}`}
+                        />
+                    </section>
+
+                    <div className={styles.profile}>
+                            <Image 
+                                width={24} 
+                                height={24} 
+                                src="/img/icons/profile-user.svg"
+                                alt="Profile"
+                            />
+                            <span>Espetinho Santo Antonio</span>
+                        </div>
+            
+            <span id="idDelivery" className={`${styles.titleDelivery} ${styles.idDelivery}`} style={{display: `${displayDeliveryCardItems}`}}>
+                <FontAwesomeIcon icon="hashtag" />
+                <strong>1973</strong>
+            </span>
 
             <section className={styles.rateDeliveryman}>
-                <span>Avaliação pendente</span>
+                {/* <span>Avaliação pendente</span> */}
 
                 {/* ---ATIVAR QUANDO O CLIENTE AVALIAR O ENTREGADOR--- */}
-                {/* <div className={styles.clientRate}>
+                <div className={styles.clientRate}>
                     <ul>
                         <li><FontAwesomeIcon icon="star" /></li>
                         <li><FontAwesomeIcon icon="star" /></li>
@@ -95,19 +85,19 @@ export default function Finished() {
                         <li><FontAwesomeIcon icon="star" /></li>
                         <li><FontAwesomeIcon icon="star" /></li>
                     </ul>
-                </div> */}
+                </div>
             </section>
 
-            <section id="address" className={styles.addressContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                <h3 className={styles.titleDelivery}>
+            <section id="address" className={styles.addressContainer} >
+                <h3 className={styles.titleDelivery} style={{display: `${displayDeliveryCardItems}`}}>
                     <FontAwesomeIcon icon="map-marker-alt" />
                     <strong>Endereço da entrega</strong>
                 </h3>
                     <p>Rua Do Endereço Da Entrega, 345</p>
 
-                <span>Referência:</span>
+                <span style={{display: `${displayDeliveryCardItems}`}}>Referência:</span>
 
-                <p>Próximo ao Bar Do Zé, Casa amarela de portão azul.</p>
+                <p style={{display: `${displayDeliveryCardItems}`}}>Próximo ao Bar Do Zé, Casa amarela de portão azul.</p>
             </section>
 
             <section id="description" className={styles.descriptionContainer} style={{display: `${displayDeliveryCardItems}`}}>

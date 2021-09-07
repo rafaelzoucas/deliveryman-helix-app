@@ -47,72 +47,50 @@ export default function InProgress() {
             {!isIssueRequestVisible ? (
                 <>
                     <section className={styles.headerContainer} onClick={showHideDeliveryCard}>
-                        <div className={styles.dateTimeId}>
-                            <span className={styles.dateTime}>Hoje - 14:53</span>
-        
-                            <span className={`${styles.titleDelivery} ${styles.idDelivery}`}>
-                                <FontAwesomeIcon icon="hashtag" />
-                                <strong>1973</strong>
-                            </span>
-        
-                        </div>
-        
-                        <FontAwesomeIcon 
-                            icon="chevron-down" 
-                            className={`${isDeliveryCardOpened ? (
-                                `${styles.showDeliveryCard}`
-                            ) : (
-                                `${styles.hideDeliveryCard}`
-                            )}`}
-                        />
-                    </section>
-                    
-                    {/* <section className={styles.statusContainer} style={{display: `${displayDeliveryCardItems}`}}>
-                        <div className={styles.statusBar}>
-                            <div className={styles.waitingDeliverymanStatus}>
-                                <div className={styles.waitingDeliverymanCurrentStatus}></div>
-                            </div>
-        
-                            <div className={styles.deliveryInProgressStatus}>
-                                <div className={styles.deliveryInProgressCurrentStatus}></div>
-                            </div>
-                        </div>
-        
-                        <p>
-                            Você está {'STATUS'}...
-                            
-                            
-                                -se deslocando até o endereço de coleta
-                                -coletando o pedido 
-                                -confirmando forma de pagamento
-                                -a caminho do endereço de entrega
-                                -retornando ao endereço de coleta 
-                           
-                        </p>
-        
-                        <span>30 minutos e 57 segundos</span>
-                    </section> */}
-
-                    <section 
-                        className={styles.clientContainer} 
-                        style={{display: `${displayDeliveryCardItems}`}}
-                    >
                         <div className={styles.profile}>
-                            <div className={styles.info}>
-                                <Image 
-                                    width={28} 
-                                    height={28} 
-                                    src="/img/icons/profile-user.svg"
-                                    alt="Profile"
-                                />
-                                <div className={styles.client}>
-                                    <span>
-                                        Estabelecimento
-                                    </span>
+                            <Image 
+                                width={24} 
+                                height={24} 
+                                src="/img/icons/profile-user.svg"
+                                alt="Profile"
+                            />
+                            <span>Espetinho Santo Antonio</span>
+                        </div>
+                        <div>
+
+                            <div className={styles.statusContainer}>
+                                {/* <div className={`${styles.label} ${styles.labelTime}`}>
+                                    <FontAwesomeIcon icon="clock" />
+                                    <span>{'14:23'}</span>
+                                </div> */}
+
+                                {/* <div className={`${styles.label} ${styles.labelSuccess}`}>
+                                    <FontAwesomeIcon icon="spinner" className={styles.loading} />
+                                    <span>{'Procurando entregador'}</span>
+                                </div> */}
+
+                                <div className={`${styles.label} ${styles.labelTime}`}>
+                                    <FontAwesomeIcon icon="hourglass-half"/>
+
+                                    <span>{'00:55'}</span>
                                 </div>
                             </div>
+                            <FontAwesomeIcon 
+                                icon="chevron-down" 
+                                className={`${isDeliveryCardOpened ? (
+                                    `${styles.showDeliveryCard}`
+                                ) : (
+                                    `${styles.hideDeliveryCard}`
+                                )}`}
+                            />
                         </div>
+        
                     </section>
+                    
+                    <div className={`${styles.titleDelivery} ${styles.idDelivery}`}>
+                        <FontAwesomeIcon icon="hashtag" />
+                        <strong>1973</strong>
+                    </div>
         
                     <section className={styles.addressContainer}>
                         <h3 className={styles.titleDelivery}>
@@ -183,31 +161,32 @@ export default function InProgress() {
                         <p>R$ 9,75</p>
                     </section>
 
-                    <div className={styles.actionButtonsContainer}>        
-                        <div className={styles.progressBtns}>
-                            <button onClick={openModalIssue} className={styles.issueBtn}>
-                                Imprevisto
-                            </button>
+                    <div className={styles.btnsContainer}>
+                        <button onClick={openModalIssue} className={styles.issueBtn}>
+                            <FontAwesomeIcon icon="comment" />
+                            WhatsApp
+                        </button>
+                        {/* <button  className={styles.issueBtn}>
+                            <FontAwesomeIcon icon="thumbs-down" />
+                            Desistir
+                        </button> */}
 
-                            <button onClick={openModalIssue} className={styles.nextStepBtn}>
-                                {'Next step button'}
+                        <button onClick={openModalIssue} className={styles.nextStepBtn}>
+                            {'Next step button'}
+                            <FontAwesomeIcon icon="angle-double-right" />
 
-                                {/* 
-                                    -Cheguei para coletar
-                                    -Peguei o pedido
-                                    -Confirmei forma de pagamento
-                                    -Entreguei
-                                    -Retornei
-                                    -Finalizar 
-                                */}
-                            </button>
-        
-                            {/*substituir pelo nextStepBtn */}
-                            {/* <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
-                                <FontAwesomeIcon icon="exclamation-circle" />
-                                <span>Houve 1 imprevisto</span>
-                            </button>*/}
-                        </div>
+                            {/* 
+                                -Cheguei para coletar
+                                -Confirmei forma de pagamento
+                                -Entreguei
+                            */}
+                        </button>
+    
+                        {/*substituir pelo nextStepBtn */}
+                        {/* <button onClick={openIssueRequest} className={styles.issueRequestBtn}> 
+                            <FontAwesomeIcon icon="exclamation-circle" />
+                            <span>Houve 1 imprevisto</span>
+                        </button>*/}
                     </div>
         
                     {isModalIssueVisible ? (
