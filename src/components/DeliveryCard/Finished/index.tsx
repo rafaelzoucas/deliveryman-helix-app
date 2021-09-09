@@ -31,10 +31,10 @@ export default function Finished() {
                         <div>
 
                             <div className={styles.statusContainer}>
-                                {/* <div className={`${styles.label} ${styles.labelTime}`}>
+                                <div className={`${styles.label} ${styles.labelTime}`}>
                                     <FontAwesomeIcon icon="clock" />
-                                    <span>{'14:23'}</span>
-                                </div> */}
+                                    <span>{'Hoje - 14:23'}</span>
+                                </div>
 
                                 <div className={`${styles.label} ${styles.labelSuccess}`}>
                                     <FontAwesomeIcon icon="check" />

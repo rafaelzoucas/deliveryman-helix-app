@@ -162,19 +162,20 @@ export default function InProgress() {
                     </section>
 
                     <div className={styles.btnsContainer}>
-                        <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
+                        {/* <Link href="https://api.whatsapp.com/send?phone=5518996465807&fbclid=IwAR1aNtRPkUTX9Xl89Wv8dmkpSdqWpkiG7FgJeXu02rnCOWlW6wCVXWbteUo">
                             <button className={styles.issueBtn}>
                                 <FontAwesomeIcon icon="comment" />
 
                                 WhatsApp
                             </button>
-                        </Link>
-                        {/* <button  className={styles.issueBtn}>
+                        </Link> */}
+                        
+                        <button onClick={openModalIssue} className={styles.issueBtn}>
                             <FontAwesomeIcon icon="thumbs-down" />
                             Desistir
-                        </button> */}
+                        </button>
 
-                        <button onClick={openModalIssue} className={styles.nextStepBtn}>
+                        <button className={styles.nextStepBtn}>
                             {'Next step button'}
                             <FontAwesomeIcon icon="angle-double-right" />
 
