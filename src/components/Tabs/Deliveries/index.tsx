@@ -52,8 +52,8 @@ export default function Home() {
         
         <div className={styles.deliveriesContainer}>
           <section style={{display: `${displayOnHoldDeliveries}`}}>
-            {/* <OnHold />
-            <OnHold /> */}
+            <OnHold />
+            <OnHold />
 
             {/* ------- ativar quando não houver entregas -------- */}
             {/* <div className={styles.theresNoDelivery}>
@@ -79,8 +79,8 @@ export default function Home() {
               </p>
             </div> */}
 
-            {/* -------- ativar quando saldo estiver insuficiente ---------- */}
-            <div className={styles.theresNoDelivery}>
+            {/* -------- ativar quando estiver bloqueado ---------- */}
+            {/* <div className={styles.theresNoDelivery}>
               <FontAwesomeIcon icon="ban" />
               <p>
                 A sua conta está bloqueada, entre em contato conosco. 
@@ -92,7 +92,7 @@ export default function Home() {
                       WhatsApp
                   </button>
               </Link>
-            </div>
+            </div> */}
           </section>
 
           <section style={{display: `${displayInProgressDeliveries}`}}>
@@ -145,7 +145,24 @@ export default function Home() {
               </Link>
             </div> */}
           </section>
+
+          <h2>Pagamentos pendentes</h2>
           <section style={{display: `${displayFinishedDeliveries}`}}>
+            <div className={styles.paymentCard}>
+              <div>
+                <p>Estabelecimento</p>
+                <span>10 entregas em aberto</span>
+              </div>
+
+              <div className={styles.value}>
+                <div>
+                  <span>Total a receber:</span>
+                  <p>R$ 50,50</p>
+                </div>
+              </div>
+            </div>
+
+            <h2>Entregas finalizadas</h2>
             <Finished />
             <Finished />
             <Canceled />

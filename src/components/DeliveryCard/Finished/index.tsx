@@ -13,6 +13,8 @@ library.add(fas)
 export default function Finished() {
     const [isDeliveryCardOpened, setIsDeliveryCardOpened] = useState(true)
     const [displayDeliveryCardItems, setDisplayDeliveryCardItems] = useState('none')
+    const [isPaymentDone, setIsPaymentDone] = useState(false)
+
 
     function showHideDeliveryCard() {
         if (isDeliveryCardOpened === true) {
@@ -22,7 +24,15 @@ export default function Finished() {
             setIsDeliveryCardOpened(true)
             setDisplayDeliveryCardItems('none')
         }
-    }  
+    }
+
+    const switchToggle = () => {
+        if(isPaymentDone) {
+            setIsPaymentDone(false)
+        } else {
+            setIsPaymentDone(true)
+        }
+    }
 
     return (
         <div className={styles.deliveryCardContainer}>
@@ -38,13 +48,19 @@ export default function Finished() {
 
                                 <div className={`${styles.label} ${styles.labelSuccess}`}>
                                     <FontAwesomeIcon icon="check" />
-                                    <span>{'Finalizada com sucesso'}</span>
+                                    <span>{'Concluída'}</span>
                                 </div>
 
                                 <div className={`${styles.label} ${styles.labelTime}`}>
                                     <FontAwesomeIcon icon="hourglass-end"/>
 
                                     <span>{'00:55'}</span>
+                                </div>
+
+                                <div className={`${styles.label} ${isPaymentDone ? styles.labelSuccess : styles.labelIssue}`}>
+                                    <FontAwesomeIcon icon="dollar-sign" />
+
+                                    <span>{isPaymentDone ? 'Recebido' : 'A receber'}</span>
                                 </div>
                             </div>
                         </div>
@@ -124,6 +140,21 @@ export default function Finished() {
                 </h3>
                 <p>Cartão</p>
             </section>
+
+            <div className={styles.paymentContainer}>
+                <p>
+                    {isPaymentDone ? "Pagamento já foi efetuado." : "Pagamento está pendente"}
+                </p>
+                <div className={`${isPaymentDone ? (
+                    `${styles.toggleOn}`
+                ) : (
+                    `${styles.toggleOff}`
+                )}`}               
+                onClick={switchToggle}
+                >
+                <div className={styles.toggleCircle} />
+                </div>
+            </div>
         </div>
     )
 }

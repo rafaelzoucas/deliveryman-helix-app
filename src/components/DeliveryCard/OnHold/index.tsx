@@ -67,10 +67,10 @@ export default function OnHold() {
 
                 <section>
                     <h3 className={styles.titleDelivery}>
-                        <FontAwesomeIcon icon="coins" />
-                        <strong>Forma de pagamento</strong>
+                        <FontAwesomeIcon icon="stopwatch" />
+                        <strong>Tempo de preparo</strong>
                     </h3>
-                    <p>Cartão</p>
+                    <p>15 min</p>
                 </section>
                 
                 <section>
@@ -78,7 +78,7 @@ export default function OnHold() {
                         <FontAwesomeIcon icon="dollar-sign" />
                         <strong>Valor a receber</strong>
                     </h3>
-                    <p>R$ 5,00</p>
+                    <p>R$ 5,50</p>
                 </section>
 
                 <div className={styles.btnsContainer}>
