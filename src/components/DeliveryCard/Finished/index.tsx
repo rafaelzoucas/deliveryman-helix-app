@@ -133,12 +133,12 @@ export default function Finished() {
                 <p>Faltou um item do pedido.</p>
             </section>
 
-            <section id="payment" style={{display: `${displayDeliveryCardItems}`}}>
+            <section style={{display: `${displayDeliveryCardItems}`}}>
                 <h3 className={styles.titleDelivery}>
-                    <FontAwesomeIcon icon="coins" />
-                    <strong>Forma de pagamento</strong>
+                    <FontAwesomeIcon icon="stopwatch" />
+                    <strong>Tempo de preparo</strong>
                 </h3>
-                <p>Cartão</p>
+                <p>15 min</p>
             </section>
 
             <div className={styles.paymentContainer}>
